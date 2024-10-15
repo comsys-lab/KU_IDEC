@@ -142,7 +142,7 @@ int main() {
     free(h_out_nu);
     free(h_bias);
 
-    std::cout << "Covolution done!" << std::endl;
+    std::cout << "Convolution done!" << std::endl;
 
 
     return 0;
