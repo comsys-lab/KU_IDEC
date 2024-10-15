@@ -5,7 +5,7 @@
 #include <math.h>
 #include <time.h>
 
-#include "Kernel.cu"
+#include "common/Kernel.cu"
 
 #define INPUT_SIZE 224*224*3
 
@@ -218,6 +218,7 @@ void inference_alexnet(float *Alex_Layer1_Neurons,float *Alex_Layer2_Neurons,flo
                     float *Alex_Layer1_pool,float *Alex_Layer2_pool,float *Alex_Layer5_pool,
 					float *Alex_Layer1_norm,float *Alex_Layer2_norm,float *Alex_Result_Neurons)
 {
+	//* First Layer *//
 	dim3 Layer1_Block(64,5,5);
 	dim3 Layer1_Thread(11,11);
 	first<<<Layer1_Block,Layer1_Thread>>>(Alex_Layer1_bias,Alex_Layer1_Neurons,Alex_Layer1_Weights,Alex_Layer1_norm,224,55,4,2,11,3,true,true);
@@ -303,7 +304,7 @@ void inference_alexnet(float *Alex_Layer1_Neurons,float *Alex_Layer2_Neurons,flo
 	
 	int line_count1 = 0;
 	char buffer[1000];
-	FILE *list1 = fopen("imagenet1000_clsidx_to_labels.txt","rt");
+	FILE *list1 = fopen("common/imagenet1000_clsidx_to_labels.txt","rt");
 	while(fgets(buffer, 1000, list1) != NULL){
 		line_count1++;
 		if(line_count1 == (index1+1)){
