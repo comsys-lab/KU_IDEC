@@ -1,2 +1,4 @@
 Day2/data_alexnet/fc6.txt filter=lfs diff=lfs merge=lfs -text
 Day2/data_alexnet/fc7.txt filter=lfs diff=lfs merge=lfs -text
+Day2/data_vgg16/fc15.txt filter=lfs diff=lfs merge=lfs -text
+Day2/data_vgg16/fc14.txt filter=lfs diff=lfs merge=lfs -text
