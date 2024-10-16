@@ -5,7 +5,7 @@
 #include <math.h>
 #include <time.h>
 
-#include "common/Kernel.cu"
+#include "common/alexnet_Kernel.cu"
 
 #define INPUT_SIZE 224*224*3
 
