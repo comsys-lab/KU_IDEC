@@ -13,6 +13,11 @@ if [ "$last_two_dirs" != "$expected_dirs" ]; then
   exit 1
 fi
 
+if [ ! -d "split_files" ]; then
+  echo "Error: 'split_files' directory not found in the current directory."
+  exit 1
+fi
+
 cat split_files/data_alexnet_vgg16.tar.gz.part* > data_alexnet_vgg16.tar.gz
 tar -xvzf data_alexnet_vgg16.tar.gz
 
